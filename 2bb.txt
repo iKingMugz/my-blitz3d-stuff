@@ -1,0 +1,28 @@
+Graphics3D 640,480
+SetBuffer BackBuffer()
+
+camera = CreateCamera() 
+
+light = CreateLight()
+
+cylinder = CreateCylinder(32)
+PositionEntity cylinder,-2,0,5 
+
+cube = CreateCube()
+PositionEntity cube,2,0,5
+
+cone = CreateCone(32)
+PositionEntity cone,0,-2,5
+
+sphere = CreateSphere(32)
+PositionEntity  sphere,0,0,5 
+
+While Not KeyDown(1) 
+
+
+RenderWorld 
+Flip 
+
+Wend 
+
+End 

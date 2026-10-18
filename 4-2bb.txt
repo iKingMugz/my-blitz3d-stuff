@@ -1,0 +1,39 @@
+Graphics3D 640,480
+SetBuffer BackBuffer()
+
+camera = CreateCamera() 
+CameraClsColor camera,0,255,0
+
+light = CreateLight()
+
+
+
+sphere = CreateSphere(32)
+PositionEntity  sphere,0,0,5 
+EntityColor sphere,255,0,0
+
+cube = CreateCube()
+PositionEntity cube,-2,0,5
+EntityColor cube,0,0,255
+
+While Not KeyDown(1) 
+
+;if [condition] then [do something]
+If KeyDown(203) Then TranslateEntity sphere,-0.1,0,0 
+If KeyDown(205) Then TranslateEntity sphere,0.1,0,0 
+If KeyDown(208) Then TranslateEntity sphere,0,-0.1,0 
+If KeyDown(200) Then TranslateEntity sphere,0,0.1,0 
+
+If KeyDown(30) Then TranslateEntity cube,-0.1,0,0 
+If KeyDown(32) Then TranslateEntity cube,0.1,0,0 
+If KeyDown(31) Then TranslateEntity cube,0,-0.1,0 
+If KeyDown(17) Then TranslateEntity cube,0,0.1,0 
+
+
+
+RenderWorld 
+Flip 
+
+Wend 
+
+End 
